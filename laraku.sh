@@ -1,15 +1,18 @@
-#!/bin/sh -eu
+#!/bin/sh
 
 # Laraku
 # Copyright (c) 2017 kamukiriri
 # This software is released under the MIT License.
 # https://opensource.org/licenses/mit-license.php
 
+set -e
+set -u
+
 #init param
 appname=${1:-laravel}
 webserver=${2:-apache}
-db=$3
-laradock=$4
+db=${3:-}
+laradock=${4:-}
 
 #create project
 if [ -d "$appname" ]; then
